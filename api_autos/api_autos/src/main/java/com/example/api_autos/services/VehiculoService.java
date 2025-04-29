@@ -1,6 +1,7 @@
 package com.example.api_autos.services;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,6 +29,11 @@ public class VehiculoService {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
         return v;
+    }
+
+    public void agregar(Vehiculo vehiculo){
+        vehiculo.setId(UUID.randomUUID().toString());
+        repo.insertar(vehiculo);
     }
 
     public void eliminar(String id){
