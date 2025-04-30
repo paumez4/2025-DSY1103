@@ -11,10 +11,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.api_autos.models.ModifVehi;
 import com.example.api_autos.models.Vehiculo;
 import com.example.api_autos.services.VehiculoService;
 
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 @RestController
 @RequestMapping("vehiculo")
@@ -45,4 +48,12 @@ public class VehiculoController {
         sVehiculo.agregar(vehiculo);
         return "Agregado!";
     }
+
+    @PutMapping("/{id}")
+    public String modificar(@PathVariable String id, @Valid @RequestBody ModifVehi vehi){
+        sVehiculo.vehiculoModificar(id, vehi);
+        return "modificado";
+    }
+
+
 }

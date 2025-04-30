@@ -27,7 +27,6 @@ public class VehiculoRepository {
         }
         return null;
     }
-
     
 
     public void insertar(Vehiculo nuevoVeh){
@@ -36,4 +35,6 @@ public class VehiculoRepository {
     public void eliminar(Vehiculo adiosVeh){
         vehiculos.remove(adiosVeh);
     }
+
+    
 }

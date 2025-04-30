@@ -40,4 +40,8 @@ public class VehiculoService {
         Vehiculo v = obtenerUno(id);
         repo.eliminar(v);
     }
+    public void vehiculoModificar (String id, Vehiculo vehiculoData){
+        Vehiculo vehiculoModificar = obtenerUno(id);
+        vehiculoModificar.setPrecio(vehiculoData.getPrecio());
+    }
 }
